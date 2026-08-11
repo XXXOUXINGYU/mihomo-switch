@@ -1,0 +1,61 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2308rem;
+  max-width: 49.2308rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.0769rem;
+  padding: 1.3846rem 1.5385rem;
+  background: var(--bg-surface);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-sm);
+}
+
+.cardHeading {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7692rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.pathRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9231rem;
+}
+
+.pathLabel {
+  flex: none;
+  width: 5.5385rem;
+  font-size: 0.9615rem;
+  color: var(--text-muted);
+}
+
+.pathValue {
+  font-size: 0.9231rem;
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.errorHint {
+  font-size: 0.8846rem;
+  color: var(--danger);
+}

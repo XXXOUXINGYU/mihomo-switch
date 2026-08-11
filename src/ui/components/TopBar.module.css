@@ -1,0 +1,337 @@
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7692rem;
+  height: 4rem;
+  padding: 0 0.6154rem 0 1.0769rem;
+  flex: 0 0 auto;
+}
+
+.dragEdge {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bar > *:not(.dragEdge) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Brand ----------------------------------------------------------------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6923rem;
+  flex: 0 0 auto;
+}
+
+.mark {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.2308rem;
+  background: var(--signal);
+  box-shadow: 0 0 0.9231rem var(--signal-glow);
+  clip-path: polygon(0 0, 100% 0, 100% 62%, 62% 100%, 0 100%);
+}
+
+.wordmark {
+  font-family: var(--font-ui);
+  font-size: 1.1538rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-primary);
+}
+
+.wordmarkAccent {
+  margin-left: 0.16em;
+  color: var(--text-faint);
+}
+
+/* Status indicator ------------------------------------------------------ */
+.statusLive,
+.statusIdle,
+.statusOffline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5385rem;
+  height: 2rem;
+  padding: 0 0.8462rem 0 0.6923rem;
+  border-radius: var(--r-pill);
+  border: 0.0769rem solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.8462rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.statusDot {
+  width: 0.5385rem;
+  height: 0.5385rem;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.statusLive {
+  border-color: var(--signal-dim);
+  background: var(--signal-dim);
+  color: var(--signal-bright);
+}
+
+.statusLive .statusDot {
+  background: var(--signal);
+  animation: signal-pulse 1.8s ease-in-out infinite;
+}
+
+.statusIdle {
+  color: var(--text-secondary);
+}
+
+.statusIdle .statusDot {
+  background: var(--text-muted);
+}
+
+.statusOffline {
+  border-color: var(--danger-dim);
+  background: var(--danger-dim);
+  color: var(--bad);
+}
+
+.statusOffline .statusDot {
+  background: var(--bad);
+}
+
+/* Readouts -------------------------------------------------------------- */
+.readouts {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.0769rem;
+  height: 2.6154rem;
+  padding: 0 1.2308rem;
+  border-radius: var(--r-md);
+  border: 0.0769rem solid var(--line);
+  background: var(--bg-surface);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.readout,
+.readoutWide {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.0769rem;
+  min-width: 0;
+}
+
+.readoutWide {
+  flex: 0 1 15.3846rem;
+}
+
+.readoutValue {
+  font-family: var(--font-mono);
+  font-size: 1.1538rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--signal-bright);
+}
+
+.readoutValueText {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.readoutLabel {
+  font-size: 0.6923rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.readoutDivider {
+  width: 0.0769rem;
+  height: 1.6923rem;
+  background: var(--line);
+  flex: 0 0 auto;
+}
+
+/* Actions --------------------------------------------------------------- */
+.actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3077rem;
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+.ghost,
+.ghostDanger,
+.start,
+.stop,
+.addButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3846rem;
+  height: 2.4615rem;
+  padding: 0 0.8462rem;
+  border-radius: var(--r-md);
+  border: 0.0769rem solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.9231rem;
+  font-weight: 600;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease,
+    transform 90ms ease;
+}
+
+.ghost:active,
+.ghostDanger:active,
+.start:active,
+.stop:active,
+.addButton:active {
+  transform: scale(0.96);
+}
+
+.ghost:hover {
+  background: var(--bg-surface-3);
+  color: var(--text-primary);
+}
+
+.ghostDanger {
+  color: var(--text-secondary);
+}
+
+.ghostDanger:hover {
+  background: var(--danger-dim);
+  color: var(--bad);
+}
+
+.addButton {
+  border-color: var(--line-strong);
+  background: var(--bg-surface-2);
+  color: var(--text-primary);
+}
+
+.addButton:hover {
+  background: var(--bg-surface-3);
+}
+
+.addIcon {
+  font-size: 1.1538rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--signal);
+}
+
+.start {
+  min-width: 5.5385rem;
+  border-color: var(--signal-dim);
+  background: var(--signal-dim);
+  color: var(--signal-bright);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.start:hover {
+  background: rgba(45, 226, 230, 0.24);
+  box-shadow: 0 0 1.3846rem var(--signal-glow);
+}
+
+.stop {
+  min-width: 5.5385rem;
+  border-color: var(--danger-dim);
+  background: var(--danger-dim);
+  color: var(--bad);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.stop:hover {
+  background: rgba(255, 107, 107, 0.22);
+}
+
+.ghost:disabled,
+.ghostDanger:disabled,
+.start:disabled,
+.stop:disabled,
+.addButton:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}
+
+/* Window controls ------------------------------------------------------- */
+.windowControls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1538rem;
+  flex: 0 0 auto;
+  padding-left: 0.4615rem;
+}
+
+.windowButton,
+.windowButtonDanger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4615rem;
+  height: 2.4615rem;
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.windowButton:hover {
+  background: var(--bg-surface-3);
+  color: var(--text-primary);
+}
+
+.windowButtonDanger:hover {
+  background: var(--danger-dim);
+  color: var(--bad);
+}
+
+.windowGlyph {
+  font-size: 1.1538rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+@media (max-width: 101.5385rem) {
+  .readoutWide {
+    display: none;
+  }
+}
+
+@media (max-width: 90.7692rem) {
+  .readouts {
+    display: none;
+  }
+}
+
+@media (max-width: 83.0769rem) {
+  .wordmarkAccent {
+    display: none;
+  }
+}

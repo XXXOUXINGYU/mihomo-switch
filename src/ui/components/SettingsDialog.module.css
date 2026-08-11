@@ -1,0 +1,138 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(4, 6, 9, 0.7);
+  backdrop-filter: blur(0.4615rem);
+  z-index: 30;
+}
+
+.dialog {
+  width: min(40rem, calc(100vw - 2.4615rem));
+  padding: 1.6923rem;
+  border-radius: var(--r-lg);
+  border: 0.0769rem solid var(--line-strong);
+  background: var(--bg-surface-2);
+  box-shadow: var(--shadow-pop);
+}
+
+.title {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.3077rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.subtitle {
+  margin: 0.6923rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9615rem;
+  line-height: 1.65;
+}
+
+.field {
+  display: grid;
+  gap: 0.5385rem;
+  margin-top: 1.3846rem;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.7692rem;
+  margin-top: 1.3846rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 1.2308rem;
+  height: 1.2308rem;
+  accent-color: var(--signal);
+}
+
+.label {
+  color: var(--text-secondary);
+  font-size: 0.8462rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.input {
+  height: 3.0769rem;
+  padding: 0 0.9231rem;
+  border-radius: var(--r-md);
+  border: 0.0769rem solid var(--line);
+  background: var(--bg-inset);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.9615rem;
+  transition: border-color 140ms ease;
+}
+
+.input::placeholder {
+  color: var(--text-faint);
+  font-family: var(--font-ui);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--signal-dim);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6154rem;
+  margin-top: 1.6923rem;
+}
+
+.cancel,
+.submit {
+  height: 2.7692rem;
+  padding: 0 1.2308rem;
+  border-radius: var(--r-md);
+  border: 0.0769rem solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease, transform 90ms ease;
+}
+
+.cancel:active,
+.submit:active {
+  transform: scale(0.96);
+}
+
+.cancel {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text-secondary);
+}
+
+.cancel:hover {
+  background: var(--bg-surface-3);
+  color: var(--text-primary);
+}
+
+.submit {
+  background: var(--signal-dim);
+  border-color: var(--signal-dim);
+  color: var(--signal-bright);
+  font-weight: 700;
+}
+
+.submit:hover {
+  background: rgba(45, 226, 230, 0.24);
+}
+
+.submit:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}

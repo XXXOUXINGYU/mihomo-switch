@@ -1,0 +1,73 @@
+.panel {
+  display: flex;
+  align-items: center;
+  gap: 0.9231rem;
+  background: var(--bg-surface);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-sm);
+  padding: 0.4615rem 0.7692rem;
+  min-height: 2.4615rem;
+}
+
+.heading {
+  font-size: 0.8462rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.metrics {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: 0.6154rem;
+}
+
+.metric {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3077rem;
+  min-width: 0;
+  padding-left: 0.6154rem;
+  border-left: 0.0769rem solid var(--line);
+}
+
+.metric:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.metricLabel {
+  font-size: 0.8462rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.metricValue {
+  font-size: 0.9231rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@container (max-width: 52.3077rem) {
+  .panel {
+    flex-wrap: wrap;
+    gap: 0.4615rem;
+  }
+
+  .metrics {
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    gap: 0.4615rem 0.7692rem;
+  }
+
+  .metric {
+    border-left: 0;
+    padding-left: 0;
+  }
+}

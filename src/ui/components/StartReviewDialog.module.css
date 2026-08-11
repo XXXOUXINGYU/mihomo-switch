@@ -1,0 +1,56 @@
+.summary {
+  display: flex;
+  gap: 0.6154rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4615rem;
+  max-height: 21.5385rem;
+  overflow: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9231rem;
+  padding: 0.6923rem 0.9231rem;
+  border-radius: var(--r);
+  background: var(--bg-surface-2);
+}
+
+.itemMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1538rem;
+  min-width: 0;
+}
+
+.itemName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemAddress {
+  font-size: 0.9231rem;
+  color: var(--text-muted);
+}
+
+.reason {
+  flex: none;
+}
+
+.noRunnable {
+  margin: 0;
+  font-size: 0.9615rem;
+  color: var(--danger);
+}

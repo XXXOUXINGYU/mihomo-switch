@@ -1,0 +1,74 @@
+.bulkRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6154rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4615rem;
+  max-height: 24.6154rem;
+  overflow: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9231rem;
+  padding: 0.6923rem 0.9231rem;
+  border-radius: var(--r);
+  background: var(--bg-surface-2);
+}
+
+.itemMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1538rem;
+  min-width: 0;
+}
+
+.itemName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemAddress {
+  font-size: 0.9231rem;
+  color: var(--text-muted);
+}
+
+.itemChoice {
+  display: flex;
+  align-items: center;
+  gap: 0.7692rem;
+  flex: none;
+}
+
+.chosen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4615rem;
+  max-width: 13.8462rem;
+}
+
+.chosenName {
+  font-size: 0.9615rem;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.unchosen {
+  font-size: 0.9615rem;
+  color: var(--text-faint);
+}

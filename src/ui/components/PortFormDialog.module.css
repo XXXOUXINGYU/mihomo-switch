@@ -1,0 +1,61 @@
+.dialog {
+  max-width: 36.9231rem;
+}
+
+.errorHint {
+  font-size: 0.9231rem;
+  color: var(--danger);
+}
+
+.bindingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9231rem;
+  min-height: 2.9231rem;
+  padding: 0.4615rem 0.7692rem;
+  border-radius: var(--r);
+  background: var(--bg-surface-2);
+  border: 0.0769rem solid var(--line);
+}
+
+.bindingNode {
+  display: flex;
+  align-items: center;
+  gap: 0.6154rem;
+  min-width: 0;
+}
+
+.bindingName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bindingSub {
+  font-size: 0.9231rem;
+  color: var(--text-muted);
+}
+
+.bindingEmpty {
+  font-size: 0.9615rem;
+  color: var(--text-muted);
+}
+
+.bindingActions {
+  display: flex;
+  gap: 0.4615rem;
+  flex: none;
+}
+
+.enableRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7692rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}

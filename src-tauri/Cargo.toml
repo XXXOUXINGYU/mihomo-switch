@@ -1,0 +1,50 @@
+[package]
+name = "mihomo_switch"
+version = "0.6.0"
+description = "Product-grade Mihomo desktop client"
+authors = ["Codex + User"]
+license = "MIT"
+repository = ""
+edition = "2021"
+rust-version = "1.77.2"
+default-run = "mihomo_switch"
+autobins = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "mihomo_switch_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[[bin]]
+name = "mihomo_switch"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2.5.3", features = [] }
+
+[dependencies]
+anyhow = "1.0"
+base64 = "0.22"
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "6.0"
+regex = "1.11"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls", "stream"] }
+serde_yaml = "0.9"
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2.9.4", features = ["tray-icon"] }
+tauri-plugin-log = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+url = "2.5"
+urlencoding = "2.1"
+uuid = { version = "1", features = ["v4", "serde"] }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = [
+  "Win32_Foundation",
+  "Win32_Security",
+  "Win32_System_JobObjects",
+  "Win32_System_Threading",
+] }

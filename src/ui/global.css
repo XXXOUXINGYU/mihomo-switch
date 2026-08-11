@@ -1,0 +1,262 @@
+:root {
+  color-scheme: light;
+  font-family: var(--font-ui);
+  background: var(--bg-app);
+  color: var(--text-primary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Typography ------------------------------------------------------------ */
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system,
+    "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "Cascadia Mono", "Consolas", ui-monospace, monospace;
+
+  /* Surfaces (warm light, separated by lightness steps, not borders) ------ */
+  --bg-app: #f3f1ec;
+  --bg-rail: #efece5;
+  --bg-surface: #fbfaf7;
+  --bg-surface-2: #f6f4ef;
+  --bg-hover: #f0eee7;
+  --bg-active: #eae7df;
+  --bg-selected: #ece9e2;
+  --bg-inset: #f1eee8;
+
+  /* Hairlines ------------------------------------------------------------- */
+  --line: rgba(60, 55, 48, 0.1);
+  --line-strong: rgba(60, 55, 48, 0.16);
+
+  /* Text ------------------------------------------------------------------ */
+  --text-primary: #2b2f38;
+  --text-secondary: #6b6258;
+  --text-muted: #9a9388;
+  --text-faint: #b7b0a4;
+  --text-on-accent: #fdfaf6;
+
+  /* Restrained vermilion-orange accent (single primary action color) ------ */
+  --accent: #c75a2a;
+  --accent-hover: #b44e22;
+  --accent-active: #a2451d;
+  --accent-soft: rgba(199, 90, 42, 0.1);
+  --accent-soft-strong: rgba(199, 90, 42, 0.16);
+
+  /* Status palette -------------------------------------------------------- */
+  --good: #5c8a5a; /* sage green: normal / running */
+  --good-soft: rgba(92, 138, 90, 0.14);
+  --info: #3f6b9e; /* steady blue: links / info */
+  --info-soft: rgba(63, 107, 158, 0.12);
+  --warn: #c0892e; /* amber/ochre: high latency / needs rebind */
+  --warn-soft: rgba(192, 137, 46, 0.14);
+  --danger: #c0524a; /* soft red: destructive only */
+  --danger-soft: rgba(192, 82, 74, 0.12);
+
+  /* Spacing scale (1rem = root font-size, design base 1rem) ---------------- */
+  --space-2xs: 0.154rem;
+  --space-xs: 0.308rem;
+  --space-sm: 0.462rem;
+  --space-md: 0.769rem;
+  --space-lg: 1.077rem;
+  --space-xl: 1.385rem;
+
+  /* Radii (unified 8px system) -------------------------------------------- */
+  --r: 0.615rem;
+  --r-sm: 0.385rem;
+  --r-pill: 999px;
+
+  /* Depth (subtle warm shadows) ------------------------------------------- */
+  --shadow-sm: 0 0.0769rem 0.1538rem rgba(40, 35, 30, 0.04);
+  --shadow-panel: 0 0.0769rem 0.2308rem rgba(40, 35, 30, 0.03), 0 0.3077rem 0.9231rem rgba(40, 35, 30, 0.04);
+  --shadow-pop: 0 0.4615rem 1.5385rem rgba(40, 35, 30, 0.1);
+
+  /* Focus ----------------------------------------------------------------- */
+  --focus-ring: 0 0 0 0.2308rem rgba(199, 90, 42, 0.28);
+
+  /* Misc ------------------------------------------------------------------ */
+  --overlay: rgba(43, 39, 33, 0.32);
+  --switch-knob: #fff;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-app: #1c1a17;
+  --bg-rail: #222019;
+  --bg-surface: #282622;
+  --bg-surface-2: #232120;
+  --bg-hover: #302e2a;
+  --bg-active: #36332f;
+  --bg-selected: #33302c;
+  --bg-inset: #252320;
+
+  --line: rgba(255, 248, 240, 0.08);
+  --line-strong: rgba(255, 248, 240, 0.13);
+
+  --text-primary: #ece8e1;
+  --text-secondary: #b5aea3;
+  --text-muted: #8a8378;
+  --text-faint: #6b6560;
+  --text-on-accent: #fdfaf6;
+
+  --accent: #d66a3a;
+  --accent-hover: #e07848;
+  --accent-active: #c05e30;
+  --accent-soft: rgba(214, 106, 58, 0.16);
+  --accent-soft-strong: rgba(214, 106, 58, 0.24);
+
+  --good: #7aab78;
+  --good-soft: rgba(122, 171, 120, 0.18);
+  --info: #6a9fd4;
+  --info-soft: rgba(106, 159, 212, 0.16);
+  --warn: #d4a24a;
+  --warn-soft: rgba(212, 162, 74, 0.18);
+  --danger: #d86a62;
+  --danger-soft: rgba(216, 106, 98, 0.16);
+
+  --shadow-sm: 0 0.0769rem 0.1538rem rgba(0, 0, 0, 0.24);
+  --shadow-panel: 0 0.0769rem 0.2308rem rgba(0, 0, 0, 0.2), 0 0.3077rem 0.9231rem rgba(0, 0, 0, 0.28);
+  --shadow-pop: 0 0.4615rem 1.5385rem rgba(0, 0, 0, 0.42);
+
+  --focus-ring: 0 0 0 0.2308rem rgba(214, 106, 58, 0.34);
+
+  --overlay: rgba(8, 6, 4, 0.58);
+  --switch-knob: #f5f3ef;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+input,
+textarea,
+select,
+[contenteditable="true"],
+[contenteditable=""] {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* Root font scales with viewport so rem-based layout shrinks/grows together. */
+html {
+  font-size: clamp(10px, calc(8px + 0.52vw), 14px);
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-app);
+  font-size: 1rem;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+button:active:not(:disabled) {
+  opacity: 0.92;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* Tabular numerals so ports / latency / traffic columns line up. */
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+input,
+textarea {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Thin warm scrollbars --------------------------------------------------- */
+:root[data-theme="dark"] * {
+  scrollbar-color: rgba(180, 172, 160, 0.28) transparent;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(80, 72, 62, 0.28) transparent;
+}
+
+:root[data-theme="dark"] *::-webkit-scrollbar-thumb {
+  background: rgba(180, 172, 160, 0.24);
+  background-clip: padding-box;
+}
+
+:root[data-theme="dark"] *::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 172, 160, 0.36);
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar {
+  width: 0.7692rem;
+  height: 0.7692rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(80, 72, 62, 0.24);
+  border: 0.1538rem solid transparent;
+  background-clip: padding-box;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(80, 72, 62, 0.36);
+  background-clip: padding-box;
+}
+
+/* A slow live pulse used by the running indicator ------------------------ */
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,38 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6154rem;
+  text-align: center;
+  padding: 3.6923rem 1.8462rem;
+  margin: auto;
+  max-width: 29.2308rem;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.3077rem;
+  color: var(--text-muted);
+  opacity: 0.85;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.0769rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.description {
+  margin: 0;
+  font-size: 0.9615rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.action {
+  margin-top: 0.7692rem;
+}

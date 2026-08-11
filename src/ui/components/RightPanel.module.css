@@ -1,0 +1,133 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6154rem;
+  padding: 0.9231rem 1rem;
+  border-bottom: 0.0769rem solid var(--line);
+}
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6154rem;
+  margin: 0;
+  font-size: 0.7692rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6923rem;
+  height: 1.3846rem;
+  padding: 0 0.4615rem;
+  border-radius: var(--r-pill);
+  background: var(--bg-surface-3);
+  font-family: var(--font-mono);
+  font-size: 0.8462rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--text-secondary);
+}
+
+.clearButton {
+  height: 2.1538rem;
+  padding: 0 0.8462rem;
+  border-radius: var(--r-sm);
+  border: 0.0769rem solid var(--line);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.9231rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease, transform 90ms ease;
+}
+
+.clearButton:hover {
+  background: var(--bg-surface-3);
+  color: var(--text-primary);
+}
+
+.clearButton:active {
+  transform: scale(0.96);
+}
+
+.log {
+  flex: 1;
+  overflow: auto;
+  padding: 0.7692rem 0.9231rem;
+  font-family: var(--font-mono);
+  font-size: 0.8846rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.line {
+  display: grid;
+  grid-template-columns: auto 0.0769rem minmax(0, 1fr);
+  gap: 0.6923rem;
+  padding: 0.0769rem 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.lineTime {
+  color: var(--text-faint);
+  font-size: 0.8077rem;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.lineGutter {
+  align-self: stretch;
+  width: 0.0769rem;
+  background: var(--line);
+}
+
+.lineText {
+  min-width: 0;
+}
+
+.lineInfo .lineText {
+  color: var(--text-secondary);
+}
+
+.lineMuted .lineText {
+  color: var(--text-muted);
+}
+
+.lineWarn .lineText {
+  color: var(--warn);
+}
+
+.lineWarn .lineGutter {
+  background: var(--warn);
+  opacity: 0.5;
+}
+
+.lineError .lineText {
+  color: var(--bad);
+}
+
+.lineError .lineGutter {
+  background: var(--bad);
+  opacity: 0.6;
+}
+
+.emptyLog {
+  color: var(--text-faint);
+  line-height: 1.7;
+  font-family: var(--font-ui);
+  font-size: 0.9231rem;
+}
